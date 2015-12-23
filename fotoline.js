@@ -345,7 +345,7 @@
         $content = this.$container.children();
         data = [];
         $content.each(function() {
-          data.push('<div class="fotoline-item">' + $(this).html() + '</div>');
+          data.push('<div class="fotoline-item">' + $(this).wrap('<div/>').parent().html() + '</div>');
         });
         return this.$container.html('<div class="fotoline-wrap"> <div class="fotoline-arrow fotoline-arrow-left" data-fotoline-direct="next">&lt;</div> <div class="fotoline-container"> <div class="fotoline-jack"> <div class="fotoline-row">' + data.join('') + '</div> </div> </div> <div class="fotoline-arrow fotoline-arrow-right" data-fotoline-direct="prev">&gt;</div> </div>');
       };

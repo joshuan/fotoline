@@ -59,7 +59,7 @@
 
       data = []
       $content.each () ->
-        data.push '<div class="fotoline-item">'+$(this).html()+'</div>'
+        data.push '<div class="fotoline-item">'+$(this).wrap('<div/>').parent().html()+'</div>'
         return
 
       @$container.html('<div class="fotoline-wrap">
