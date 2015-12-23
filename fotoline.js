@@ -53,12 +53,13 @@
       Collection.prototype.currentLeft = 0;
 
       function Collection(events, $els) {
+        var self;
         this.events = events;
-        $.each($els, (function(_this) {
-          return function(index, $el) {
-            _this.addElement($el);
-          };
-        })(this));
+        this.elements = [];
+        self = this;
+        $.each($els, function(index, $el) {
+          self.addElement($el);
+        });
         this.events.on('fotoline.margin', (function(_this) {
           return function(event, size) {
             _this.setMargin(size);
@@ -113,7 +114,7 @@
       };
 
       Collection.prototype.setWidth = function(width) {
-        return $.each(this.elements, function(index, item) {
+        $.each(this.elements, function(index, item) {
           item.$el.width(width);
           return this;
         });

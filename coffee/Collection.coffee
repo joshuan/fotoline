@@ -11,8 +11,10 @@
 
     constructor: (events, $els) ->
       @events = events
-      $.each $els, (index, $el) =>
-        @addElement $el
+      @elements = []
+      self = @
+      $.each $els, (index, $el) ->
+        self.addElement $el
         return
 
       @events.on 'fotoline.margin', (event, size) =>
@@ -57,3 +59,4 @@
       $.each @elements, (index, item) ->
         item.$el.width width
         @
+      return
