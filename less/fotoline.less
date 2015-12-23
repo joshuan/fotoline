@@ -1,0 +1,82 @@
+.fotoline {
+  &-wrap {
+    position: relative;
+    width: 100%;
+    display: table;
+  }
+
+  &-container {
+    display: table-cell;
+    overflow: hidden;
+    position: relative;
+  }
+
+  &-jack {
+    position: relative;
+
+  }
+
+  &-arrow {
+    position: relative;
+    display: table-cell;
+    width: 60px;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    height: 140px;
+    &-left {
+    }
+    &-right {
+    }
+    &-hide {
+      opacity: 0 !important;
+      cursor: default;
+    }
+    &-block {
+      opacity: 0.5;
+      cursor: default;
+    }
+  }
+
+  &-item {
+    float: left;
+    margin: 10px;
+    text-align: center;
+  }
+
+  &-current {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    margin: 10px 0;
+    background: rgba(221, 220, 7, 0.35);
+  }
+
+  &-row {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    &:before,
+    &:after {
+      content: " "; // 1
+      display: table; // 2
+    }
+    &:after {
+      clear: both;
+    }
+  }
+
+  &-left&-arrow-hide, &-right&-arrow-hide {
+    opacity: 0.1;
+  }
+  &-left&-arrow-block, &-right&-arrow-block {
+    opacity: 0.5;
+  }
+}
