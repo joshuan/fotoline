@@ -599,6 +599,18 @@
         fotoline: data
       });
     });
+    jQuery.fn.fotoline = function(params) {
+      var $el, data;
+      $el = $(this);
+      $.each(params, function(param, value) {
+        return $el.data('fotoline-' + param, value);
+      });
+      data = new Fotoline($el);
+      $el.data({
+        fotoline: data
+      });
+      return data;
+    };
     return this;
   });
 
